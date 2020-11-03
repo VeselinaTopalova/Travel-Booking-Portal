@@ -1,13 +1,14 @@
 ﻿namespace TravelBookingPortal.Web.ViewModels.Home
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+    using TravelBookingPortal.Data.Models;
+    using TravelBookingPortal.Services.Mapping;
 
-    public class IndexCompanyViewModel
+    public class IndexCompanyViewModel : IMapFrom<Company>
     {
         public string Name { get; set; }
 
         public string Logo { get; set; }
+
+        public string Url { get; set; }
     }
 }

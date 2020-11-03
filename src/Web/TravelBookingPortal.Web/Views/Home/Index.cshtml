@@ -16,12 +16,20 @@
 
 <strong class="intro-title">Trusted by all the largest travel brands</strong>
 <div class="row">
-    @foreach (var category in Model.Companies)
+    @foreach (var company in Model.Companies)
     {
-<div class="col-md-4 media">
-    <img src="@category.Logo" width="80" class="mr-3" alt="@category.Name">
-
-</div>}
+    <div class="col-md-4 media">
+        @*<img src="@company.Logo" width="80" class="mr-3" alt="@company.Name">
+        <div class="media-body">
+            <h5 class="mt-0">
+                <a href="@company.Url">
+                    @company.Name
+                </a>
+            </h5>
+        </div>*@
+        @*<a href="/Store/Browse?genre=@company.Name">@company.Name</a>*@
+        <a href="/Company/Browse?name=@company.Name"><img src="@company.Logo" width="80" class="mr-3" alt="@company.Name"></a>
+    </div>}
 </div>
 <p>&nbsp;</p>
 <h3>Featured Trips</h3>
