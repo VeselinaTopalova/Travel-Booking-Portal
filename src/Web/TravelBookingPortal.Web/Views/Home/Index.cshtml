@@ -1,0 +1,41 @@
+﻿@using TravelBookingPortal.Common
+@model TravelBookingPortal.Web.ViewModels.Home.IndexViewModel
+@{ this.ViewData["Title"] = $"Welcome to {@GlobalConstants.SystemName}!"; }
+
+
+<div class="text-center">
+    <h1 class="display-4">@this.ViewData["Title"]</h1>
+</div>
+<div class="intro-banner">
+    <div class="video-holder">
+        <div class="video">
+            <video id="bookmundi-video" preload="auto" width="1024" height="600" playsinline="" autoplay="" muted="" loop="" poster="https://d3hne3c382ip58.cloudfront.net/resources/home/videos/fallbackvideo.jpg"><source src="https://d3hne3c382ip58.cloudfront.net/resources/home/videos/bookmundivideo.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+        </div>
+    </div>
+</div>
+
+<strong class="intro-title">Trusted by all the largest travel brands</strong>
+<div class="row">
+    @foreach (var category in Model.Companies)
+    {
+<div class="col-md-4 media">
+    <img src="@category.Logo" width="80" class="mr-3" alt="@category.Name">
+
+</div>}
+</div>
+<p>&nbsp;</p>
+<h3>Featured Trips</h3>
+<h5>Popular tours and trip packages.</h5>
+<div class="card-group">
+    @foreach (var tour in Model.Tours)
+    {
+<div class="card">
+    <img src="@tour.Image" class="card-img-top" alt="@tour.Name">
+    <div class="card-body">
+        <h5 class="card-title">@tour.Name</h5>
+        <p class="card-text">@tour.Duration days        From US$@tour.PriceTotal</p>
+        @*<p class="card-text"><small class="text-muted">@tour.Price</small></p>*@
+        <a href="#" class="link1">LEARN MORE</a>
+    </div>
+</div>}
+</div>
