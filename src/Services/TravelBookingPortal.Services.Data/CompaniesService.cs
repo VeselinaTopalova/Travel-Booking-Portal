@@ -25,5 +25,11 @@
             }
             return query.To<T>().ToList();
         }
+
+        public T GetByName<T>(string name)
+        {
+            var company = this.companyRepository.All().Where(x => x.Name == name).To<T>().FirstOrDefault();
+            return company;
+        }
     }
 }

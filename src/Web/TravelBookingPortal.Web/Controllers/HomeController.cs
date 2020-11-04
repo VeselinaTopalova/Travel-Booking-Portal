@@ -1,15 +1,10 @@
 ﻿namespace TravelBookingPortal.Web.Controllers
 {
-    using System.Diagnostics;
-    using System.Linq;
+
     using Microsoft.AspNetCore.Mvc;
-    using TravelBookingPortal.Data;
-    using TravelBookingPortal.Data.Common.Repositories;
-    using TravelBookingPortal.Data.Models;
+    using TravelBookingPortal.Services.Data;
     using TravelBookingPortal.Web.ViewModels;
     using TravelBookingPortal.Web.ViewModels.Home;
-    using TravelBookingPortal.Services.Mapping;
-    using TravelBookingPortal.Services.Data;
 
     public class HomeController : BaseController
     {
@@ -33,7 +28,7 @@
             //    Name = x.Name,
             //}).Take(3).ToList();
             //var tours = this.toursRepository.All().To<IndexTourViewModel>().ToList();
-            var tours = this.toursService.GetAll<IndexTourViewModel>();
+            var tours = this.toursService.GetTopPopular<IndexTourViewModel>();
             viewModel.Tours = tours;
 
             //var companies = this.companiesRepository.All().Select(x => new IndexCompanyViewModel
@@ -54,6 +49,7 @@
         {
             return this.View();
         }
+
         public IActionResult AboutUs()
         {
             return this.View();

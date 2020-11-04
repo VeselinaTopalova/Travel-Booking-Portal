@@ -1,9 +1,9 @@
-﻿namespace TravelBookingPortal.Web.ViewModels.Home
+﻿namespace TravelBookingPortal.Web.ViewModels.Tours
 {
     using TravelBookingPortal.Data.Models;
     using TravelBookingPortal.Services.Mapping;
 
-    public class IndexTourViewModel : IMapFrom<Tour>
+    public class TourViewModel : IMapFrom<Tour>
     {
         public int Id { get; set; }
 

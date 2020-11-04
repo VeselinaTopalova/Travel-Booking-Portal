@@ -1,0 +1,47 @@
+﻿@using TravelBookingPortal.Common
+@model TravelBookingPortal.Web.ViewModels.Tours.TourDetailsViewModel
+@{ this.ViewData["Title"] = $"Welcome to {@GlobalConstants.SystemName}!"; }
+
+<section class="py-5">
+    <div class="container">
+        <h1 style="margin: 2%; text-align: center;">@Model.Name</h1>
+        <h7>
+            Best price guaranteed             No booking fees
+        </h7>
+        <div>
+            <div class="form-group text-center">
+                <img src="@Model.Image" class="img-fluid">
+            </div>
+
+            <div>
+                <h6 class="mt-0">From US$ @Model.PriceTotal</h6>
+            </div>
+            <div>
+                <h6 class="mt-0">DepartureDate: @Model.DepartureDate.ToString("d")</h6>
+            </div>
+            <div>
+                <h6 class="mt-0">DepartureDate: @Model.ReturnDate.ToString("d")</h6>
+            </div>
+            <div>
+                <h6 class="mt-0">Highlights</h6>
+                @Model.Highlights
+            </div>
+            <div>
+                <h6 class="mt-0">Included</h6>
+                @Model.Included
+            </div>
+            <div>
+                <h6 class="media-heading"><a asp-controller="Companies" asp-action="ByName" asp-route-id="@Model.CompanyName">@Model.CompanyName</a></h6>
+                <img src="@Model.CompanyLogo" width="80" class="mr-3" alt="@Model.CompanyName">
+            </div>
+
+
+
+            <div class="form-group text-center">
+                <div class="button-holder">
+                    <a href="/Trips/AddUserToTrip?tripId=@Model.Id" class="btn btn-primary btn-block text-uppercase">Join</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

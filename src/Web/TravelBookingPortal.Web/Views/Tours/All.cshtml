@@ -1,0 +1,34 @@
+﻿@using TravelBookingPortal.Common
+@model TravelBookingPortal.Web.ViewModels.Tours.AllToursxViewModel
+@{ this.ViewData["Title"] = $"Welcome to {@GlobalConstants.SystemName}!"; }
+
+
+<div class="text-center">
+    <h1 class="display-4">@this.ViewData["Title"]</h1>
+</div>
+
+
+
+<p>&nbsp;</p>
+<h3>All Tours</h3>
+
+
+<div class="row">
+    @foreach (var tour in Model.Tours)
+    {
+    <div class="col-md-4 media">
+        <div class="card">
+            <img src="@tour.Image" class="card-img-top" alt="@tour.Name">
+            <div class="card-body">
+                <h5 class="card-title">@tour.Name</h5>
+                <p class="card-text">@tour.Duration days</p>
+                <p class="card-text">From US$@tour.PriceTotal</p>
+                @*<a href="/Tours/Details?tourId=@tour.Id" class="btn btn-info text-uppercase">LEARN MORE</a>*@
+                <h6 class="media-heading"><a asp-controller="Tours" asp-action="ById" asp-route-id="@tour.Id">LEARN MORE</a></h6>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+         

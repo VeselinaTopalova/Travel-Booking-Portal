@@ -3,12 +3,11 @@
     using System;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Mvc;
     using TravelBookingPortal.Data.Common.Repositories;
     using TravelBookingPortal.Data.Models;
     using TravelBookingPortal.Services.Data;
     using TravelBookingPortal.Web.ViewModels.Settings;
-
-    using Microsoft.AspNetCore.Mvc;
 
     public class SettingsController : BaseController
     {

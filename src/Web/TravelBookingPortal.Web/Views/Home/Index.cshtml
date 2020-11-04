@@ -43,7 +43,7 @@
         <h5 class="card-title">@tour.Name</h5>
         <p class="card-text">@tour.Duration days        From US$@tour.PriceTotal</p>
         @*<p class="card-text"><small class="text-muted">@tour.Price</small></p>*@
-        <a href="#" class="link1">LEARN MORE</a>
+    <h6 class="media-heading"><a asp-controller="Tours" asp-action="ById" asp-route-id="@tour.Id">LEARN MORE</a></h6>
     </div>
 </div>}
 </div>
