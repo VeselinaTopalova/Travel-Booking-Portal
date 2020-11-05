@@ -31,5 +31,12 @@
             var company = this.companyRepository.All().Where(x => x.Name == name).To<T>().FirstOrDefault();
             return company;
         }
+
+        public T GetById<T>(int id)
+        {
+            var company = this.companyRepository.All().Where(x => x.Id == id)
+                .To<T>().FirstOrDefault();
+            return company;
+        }
     }
 }

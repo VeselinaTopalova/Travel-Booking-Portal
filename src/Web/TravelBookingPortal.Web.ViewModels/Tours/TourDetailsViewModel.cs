@@ -31,6 +31,8 @@
 
         public string CompanyLogo { get; set; }
 
+        public int CompanyId { get; set; }
+
         //public string DepartureTimeFormatted => this.DepartureTime.ToString("s");
     }
 }

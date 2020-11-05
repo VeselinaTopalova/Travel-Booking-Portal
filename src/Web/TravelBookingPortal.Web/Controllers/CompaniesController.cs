@@ -18,5 +18,16 @@
             var viewModel = this.companiesService.GetByName<CompanyViewModel>(name);
             return this.View(viewModel);
         }
+
+        public IActionResult ById(int id)
+        {
+            var postViewModel = this.companiesService.GetById<CompanyViewModel>(id);
+            if (postViewModel == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(postViewModel);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿@using TravelBookingPortal.Common
+@*@model TravelBookingPortal.Web.ViewModels.Home.IndexViewModel*@
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,27 +25,42 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         @*<li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </li>*@
+                <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </nav>
+                    
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Destination
+                        </button>
+                        <div class="dropdown-menu">
+                            <p><a asp-controller="Destinations" asp-action="ById" asp-route-id="1">Asia</a></p>
+                            <p><a asp-controller="Destinations" asp-action="ById" asp-route-id="2">Europe</a></p>
+                            <p><a asp-controller="Destinations" asp-action="ById" asp-route-id="3">Africa</a></p>
+                            <p><a asp-controller="Destinations" asp-action="ById" asp-route-id="4">North America</a></p>
+                            <p><a asp-controller="Destinations" asp-action="ById" asp-route-id="5">South America</a></p>
+                            <p><a asp-controller="Destinations" asp-action="ById" asp-route-id="6">Oceania</a></p>
+                            <p><a asp-controller="Destinations" asp-action="ById" asp-route-id="6">Polar</a></p>
+                            <p><a asp-controller="Destinations" asp-action="ById" asp-route-id="6">Regions</a></p>                            
+                        </div>
+                    </div>
+                </div>                
+</nav>
     </header>
-    
+
     <div class="container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @this.RenderBody()
         </main>
     </div>
-    
+
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

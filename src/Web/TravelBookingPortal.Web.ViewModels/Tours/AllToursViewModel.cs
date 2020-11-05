@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class AllToursxViewModel
+    public class AllToursViewModel
     {
         public IEnumerable<TourViewModel> Tours { get; set; }
 

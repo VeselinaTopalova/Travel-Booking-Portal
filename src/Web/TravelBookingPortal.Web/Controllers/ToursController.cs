@@ -21,7 +21,7 @@
 
         public IActionResult All()
         {
-            var viewModel = new AllToursxViewModel();
+            var viewModel = new AllToursViewModel();
 
             var tours = this.toursService.GetAll<TourViewModel>();
             viewModel.Tours = tours;

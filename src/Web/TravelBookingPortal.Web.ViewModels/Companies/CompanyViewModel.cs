@@ -24,5 +24,7 @@
         public string Logo { get; set; }
 
         public IEnumerable<ReviewCompanyViewModel> ReviewsCompanies { get; set; }
+
+        public IEnumerable<Tour> Tours { get; set; }
     }
 }

@@ -7,5 +7,7 @@
         public IEnumerable<IndexTourViewModel> Tours { get; set; }
 
         public IEnumerable<IndexCompanyViewModel> Companies { get; set; }
+
+        public IEnumerable<IndexDestinationViewModel> Destinations { get; set; }
     }
 }
